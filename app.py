@@ -4,9 +4,9 @@ import pandas as pd
 import joblib
 # ===== Load model, scaler, and feature columns =====
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
-SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
-COLUMNS_PATH = os.path.join(BASE_DIR, "feature_columns.pkl")
+MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "models", "scaler.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "models", "feature_columns.pkl")
 @st.cache_resource
 def load_artifacts():
     model = joblib.load(MODEL_PATH)
