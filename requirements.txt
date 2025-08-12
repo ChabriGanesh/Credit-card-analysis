@@ -1,1 +1,1 @@
-pip install joblib
+install joblib
