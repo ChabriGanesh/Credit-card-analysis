@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 # ===== Load model, scaler, and feature columns =====
-BASE_DIR = os.path.dirname(os.path.abspath(file))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
 COLUMNS_PATH = os.path.join(BASE_DIR, "feature_columns.pkl")
