@@ -8,6 +8,11 @@ SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
 COLUMNS_PATH = os.path.join(BASE_DIR, "feature_columns.pkl")
 @st.cache_resource
 def load_artifacts():
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+    feature_columns = joblib.load(COLUMNS_PATH)
+    return model, scaler, feature_columns
+model, scaler, X_columns = load_artifacts()
 # ===== Page Title =====
 st.title("📊 Credit Risk Prediction App")
 st.markdown("Enter applicant details below to check risk probability and approval decision.")
