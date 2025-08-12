@@ -2,9 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 # ===== Load model, scaler, and feature columns =====
-model = joblib.load(r"credit-card-analysis/model.pkl")
-scaler = joblib.load(r"credit-card-analysis/scaler.pkl")
-X_columns = joblib.load(r"credit-card-analysis/feature_columns.pkl")  # list of feature names
+BASE_DIR = os.path.dirname(os.path.abspath(file))
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "feature_columns.pkl")
+@st.cache_resource
+def load_artifacts():
 # ===== Page Title =====
 st.title("📊 Credit Risk Prediction App")
 st.markdown("Enter applicant details below to check risk probability and approval decision.")
